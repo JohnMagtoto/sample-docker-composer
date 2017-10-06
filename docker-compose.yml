@@ -1,0 +1,21 @@
+version : '3' # Version of docker-compose to use
+
+# Define containers || services to run
+
+services:
+    angular:
+        build: angular-client
+        ports:
+            - "4200:4200"
+        volumes:
+            - /Users/johnmagtoto/Documents/workspace/docker-folder/sample-mean/angular-client:/app
+    express:
+        build: express-server
+        ports:
+            - "3000:3000"
+        volumes:
+            - /Users/johnmagtoto/Documents/workspace/docker-folder/sample-mean/express-server:/driver
+
+# volumes:
+#     /Users/johnmagtoto/Documents/workspace/docker-folder/sample-mean/angular-client: /app
+#     /Users/johnmagtoto/Documents/workspace/docker-folder/sample-mean/express-server: /driver
